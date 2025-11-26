@@ -40,6 +40,7 @@ jobs:
         with:
           commit_message: "Update image tag to ${{ github.sha }}"
           file_pattern: charts/myapp/values.yaml
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Package Helm chart
         run: |
