@@ -1,5 +1,5 @@
 image:
-  repository: docker.io/YOUR_DOCKERHUB_USERNAME/myapp
+  repository: docker.io/anirudh09041/myapp
   tag: "1b39cece05f353c2ee7de85b56dbc6cca404c525"
 
 replicaCount: 1
