@@ -1,5 +1,9 @@
 name: CI Pipeline
 
+permissions:
+  contents: write
+  actions: write
+
 on:
   push:
     branches:
