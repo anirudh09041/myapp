@@ -40,11 +40,17 @@ jobs:
           sed -i "s/tag:.*/tag: \"${{ github.sha }}\"/" charts/myapp/values.yaml
 
       - name: Commit updated values.yaml
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update image tag to ${{ github.sha }}"
-          file_pattern: charts/myapp/values.yaml
-          token: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add charts/myapp/values.yaml
+          git commit -m "Update image tag to ${GITHUB_SHA}" || echo "No changes to commit"
+
+      - name: Push changes using PAT
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git push https://${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
 
       - name: Package Helm chart
         run: |
