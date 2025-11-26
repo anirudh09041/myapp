@@ -1,6 +1,6 @@
 image:
   repository: docker.io/YOUR_DOCKERHUB_USERNAME/myapp
-  tag: "latest"
+  tag: "5b9e01a43eed14e5f2a39a31f795d95564791a0d"
 
 replicaCount: 1
 
