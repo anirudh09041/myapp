@@ -1,6 +1,6 @@
 image:
   repository: docker.io/anirudh09041/myapp
-  tag: "1b39cece05f353c2ee7de85b56dbc6cca404c525"
+  tag: "42fdcde64ccab96443b471d9cb74a794ce997502"
 
 replicaCount: 1
 
