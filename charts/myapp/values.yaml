@@ -2,7 +2,7 @@ image:
   repository: docker.io/anirudh09041/myapp
   tag: "42fdcde64ccab96443b471d9cb74a794ce997502"
 
-replicaCount: 1
+replicaCount: 2
 
 service:
   type: ClusterIP
